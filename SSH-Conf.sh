@@ -6,7 +6,9 @@ sudo apt update && sudo apt upgrade -y
 # Check if BBR is installed
 if ! modinfo tcp_bbr &> /dev/null; then
     # Install BBR
-    wget -N --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && bash bbr.sh
+    wget -N --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && sudo bash bbr.sh
+    # Automatically press Enter after BBR installation
+    echo | sudo tee -a /dev/null
 fi
 
 # Set timezone to Tehran
